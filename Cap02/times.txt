@@ -10,3 +10,19 @@ Benchmark 1: python3 Pysort.py
   Time (mean ± σ):      90.1 ms ±   0.9 ms    [User: 74.1 ms, System: 8.4 ms]
   Range (min … max):    88.2 ms …  91.7 ms    32 runs
  
+Benchmark 1: ./Cppsort
+  Time (mean ± σ):       9.2 ms ±   0.4 ms    [User: 3.7 ms, System: 1.7 ms]
+  Range (min … max):     7.8 ms …  10.6 ms    252 runs
+ 
+Benchmark 1: ./Csharpsort/Csharpsort
+  Time (mean ± σ):      16.5 ms ±   1.1 ms    [User: 2.2 ms, System: 3.9 ms]
+  Range (min … max):    14.5 ms …  19.5 ms    162 runs
+ 
+Benchmark 1: ./Cppsort with -O3
+  Time (mean ± σ):       8.0 ms ±   0.8 ms    [User: 2.9 ms, System: 1.4 ms]
+  Range (min … max):     7.1 ms …  17.5 ms    303 runs
+ 
+Benchmark 1: ./Csort with -O3
+  Time (mean ± σ):       7.0 ms ±   0.8 ms    [User: 2.3 ms, System: 0.9 ms]
+  Range (min … max):     5.9 ms …  12.2 ms    312 runs
+ 

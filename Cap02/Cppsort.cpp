@@ -29,10 +29,5 @@ int main()
 
 	selectionSort(nums, SIZE);
 
-	for(int i = 0; i < 30; i++)
-	{
-		std::cout << nums[i] << std::endl;
-	}
-
 	return 0;
 }
