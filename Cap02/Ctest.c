@@ -12,9 +12,31 @@ int main()
 	FILE * numsFile = fopen("numbers.bin", "r");
 	fread(nums, sizeof(int), SIZE_SOURCE, numsFile);
 
+	for(int i = 0; i < 30; i++)
+	{
+		printf("%d  ", nums[i]);
+	}
+	printf("\n");
+
 	selectionSort(nums, SIZE_SOURCE);
 
+	for(int i = 0; i < 30; i++)
+	{
+		printf("%d  ", nums[i]);
+	}
+	printf("\n");
+	
+
 	fclose(numsFile);
+
+	FILE * sortedFile = fopen("csortResult.txt","w");
+
+	for(int i = 0; i < SIZE_SOURCE; i++)
+	{
+		fprintf(sortedFile, "%d\n", nums[i]);
+	}
+
+	fclose(sortedFile);
 
 	return 0;
 }
