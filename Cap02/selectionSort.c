@@ -1,78 +1,77 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void printAll(int * list, int length);
-void swap(int * a, int * b);
-int selectionSort(int * list, int length);
+void swap(int * x, int * y);
+void selectionSort(int * list, size_t length);
+void printArray(const int * list, size_t length);
+int * createList(size_t length);
 
-int main(int size, char * arguments[])
+int main(int argc, char * arguments[])
 {
-	if(size < 2)
+	if(argc < 2)
 	{
-		printf("Usage: %s <number1, number2, ...>\n", arguments[0]);
+		printf("usage: \n%s <number> <number> ...\n", arguments[0]);
 		return -1;
 	}
 
-	int * numbers = malloc(sizeof(int) * (size - 1));
+	int * numbers = createList(argc - 1);
 
-	for(int i = 0; i < size - 1; i++)
+	for(int i = 1; i < argc; i++)
 	{
-		*(numbers + i) = atoi(arguments[i + 1]);
+		numbers[i - 1] = atoi(arguments[i]);
 	}
 
-	printAll(numbers, size - 1);
+	selectionSort(numbers, argc - 1);
 
-	printf("After sorting:\n");
- 	int totalSwaps = selectionSort(numbers, size - 1);
-	printAll(numbers, size - 1);
-	printf("The total number of swaps: %d\n", totalSwaps);
+	printArray(numbers, argc - 1);
 
 	free(numbers);
 
 	return 0;
 }
 
-void printAll(int * list, int length)
+void swap(int * x, int * y)
 {
-	printf("Sequence:  ");
-	for(int i = 0; i < length; i++)
-	{
-		printf("%d  ", *(int *)(list + i));
-	}
-
-	printf("\n");
-
+	int t = *x;
+	*x = *y;
+	*y = t;
 }
 
-void swap(int * a, int * b)
+void selectionSort(int * list, size_t length)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-int selectionSort(int * list, int length)
-{
-	int j, moves;
-	moves = 0;
-
+	int min, j;
 	for(int i = 0; i < length - 1; i++)
 	{
 		j = i + 1;
-
-		while((j > 0) && (list[j - 1] > list[j]))
+		min = i;
+		for(j; j < length; j++)
 		{
-			swap((list + j - 1), (list + j));
-			j--;
-			moves++;
+			if(list[j] < list[min])
+			{
+				min = j;
+			}
 		}
-	}
 
-	return moves;
+		swap(&list[min], &list[i]);
+	}
 }
 
+void printArray(const int * list, size_t length)
+{
+	for(size_t i = 0; i < length; i++)
+	{
+		printf("%d\t", list[i]);
+	}
 
+	printf("\n");
+}
 
+int * createList(size_t length)
+{
+	int * result = malloc(length * sizeof(int));
+
+	return result;
+}
 
 
 
