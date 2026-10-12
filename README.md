@@ -6,3 +6,4 @@ I have fragmented knowledge of this topic, which I have developed through sporad
 
 I also want to practice C++, so I'll use both C and C++. In the C implementation, my main goal will be to master data structures and algorithms, while in C++, I'll focus on implementing the algorithms and making the most of the language's features.
 I've decided to include C# and Python as well. With C#, I'll try to master an allocation free approach (and the idiomatic too) and with Python the goal will be simply get familiar with the language.
+<img width="1000" height="800" alt="image" src="https://github.com/user-attachments/assets/d1cb4c07-0f7f-45aa-ba89-481fee0433bc" />
